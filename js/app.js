@@ -187,7 +187,7 @@ var timer = document.querySelector(".timer");
 var interval;
 function startTimer(){
     interval = setInterval(function(){
-        timer.innerHTML = `${minute} mins ${second} secs`;
+        timer.innerHTML = `${minute} mins ${second} secs `;
         second++;
         if(second == 60){
             minute++;
