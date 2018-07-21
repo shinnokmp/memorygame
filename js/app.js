@@ -29,7 +29,7 @@ let matchedCard = document.getElementsByClassName("match");
  let modal = document.getElementById("popover")
 
  // array for opened cards
-var openedCards = [];
+let openedCards = [];
 
 
 /*
@@ -50,7 +50,6 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
     return array;
 }
 
@@ -63,6 +62,8 @@ function letsPlay(){
            deck.appendChild(item);
        });
     cards[i].classList.remove("show", "open", "match", "disabled");
+/*to empty the array*/    
+    openedCards.length = 0;
 }
     moves = 0;
     counter.innerHTML = `${moves} move`;
@@ -186,7 +187,7 @@ var timer = document.querySelector(".timer");
 var interval;
 function startTimer(){
     interval = setInterval(function(){
-        timer.innerHTML = minute+"mins "+second+"secs ";
+        timer.innerHTML = `${minute} mins ${second} secs`;
         second++;
         if(second == 60){
             minute++;
